@@ -1,5 +1,7 @@
 def isPrime(number):
     for primeNumber in [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 ]:
+        if primeNumber == number:
+            return True
         if number % primeNumber == 0:
             return False
     return True
