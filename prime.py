@@ -9,10 +9,15 @@ def isPrime(number):
 
 def getPrimeFactors(number):
     primeFactors = []
+    print(number)
+    numberOfSpaces = 0
     for primeNumber in [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]:
         while number % primeNumber == 0:
-            number = number / primeNumber
+            print(" " * numberOfSpaces, "/ \\")
+            print(" " * numberOfSpaces, primeNumber, number // primeNumber)
+            number = number // primeNumber
             primeFactors.append(primeNumber)
+            numberOfSpaces = numberOfSpaces + 2
     return primeFactors
 
 
