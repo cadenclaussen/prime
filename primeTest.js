@@ -1,7 +1,7 @@
 'use strict';
-var findPrimes = require('./findPrimes');
+var generatePrimes = require('./prime');
 
 
 let max = parseInt(process.argv[2]);
-let primeNumbers = findPrimes(max);
+let primeNumbers = generatePrimes(max);
 console.log(primeNumbers.length);

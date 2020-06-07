@@ -2,7 +2,7 @@
 
 
 
-function findPrimes(max) {
+function generatePrimes(max) {
     let primes = [ 2 ];
     for (let n = 3; n <= max; n++) {
         if (isPrime(n, primes)) {
@@ -24,4 +24,4 @@ function isPrime(n, primes) {
 }
 
 
-module.exports = findPrimes;
+module.exports = generatePrimes;
