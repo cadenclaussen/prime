@@ -30,6 +30,14 @@ def isPrime(n):
     return False
 
 
+def lcm(n1, n2):
+    pass
+
+
+def gcd(n1, n2):
+    pass
+
+
 def __isPrime(n, primes):
     for prime in primes:
         if n % prime == 0:
