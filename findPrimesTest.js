@@ -1,6 +1,7 @@
+'use strict';
 var findPrimes = require('./findPrimes');
 
 
-let primeNumbers = findPrimes(1000);
-console.log(primeNumbers);
+let max = parseInt(process.argv[2]);
+let primeNumbers = findPrimes(max);
 console.log(primeNumbers.length);

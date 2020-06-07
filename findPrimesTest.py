@@ -1,5 +1,6 @@
+import sys
 import findPrimes
 
-primeNumbers = findPrimes.findPrimes(1000)
-print(primeNumbers)
+max = int(sys.argv[1])
+primeNumbers = findPrimes.findPrimes(max)
 print(len(primeNumbers))
