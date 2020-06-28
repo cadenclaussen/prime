@@ -35,7 +35,22 @@ def lcm(n1, n2):
 
 
 def gcd(n1, n2):
-    pass
+    primeFactors1 = getPrimeFactors(n1)
+    primeFactors2 = getPrimeFactors(n2)
+
+    commonPrimeFactors = []
+    for primeFactor1 in primeFactors1:
+        for primeFactor2 in primeFactors2:
+            if primeFactor2 == primeFactor1:
+                commonPrimeFactors.append(primeFactor1)
+                primeFactors2.remove(primeFactor2)
+                break
+
+    gcf = 1
+    for commonPrimeFactor in commonPrimeFactors:
+        gcf = gcf * commonPrimeFactor
+        
+    return gcf
 
 
 def __isPrime(n, primes):
