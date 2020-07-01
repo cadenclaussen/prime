@@ -24,33 +24,40 @@ def getPrimeFactors(n):
 
 
 def isPrime(n):
-    primes = generatePrimes(n - 1);
+    primes = generatePrimes(n - 1)
     if (__isPrime(n, primes)):
         return True
     return False
 
-
 def lcm(n1, n2):
-    pass
-
-
-def gcd(n1, n2):
     primeFactors1 = getPrimeFactors(n1)
     primeFactors2 = getPrimeFactors(n2)
 
-    commonPrimeFactors = []
+    lcmPrimeFactors = []
+
     for primeFactor1 in primeFactors1:
+        found = False
         for primeFactor2 in primeFactors2:
             if primeFactor2 == primeFactor1:
-                commonPrimeFactors.append(primeFactor1)
+                lcmPrimeFactors.append(primeFactor1)
                 primeFactors2.remove(primeFactor2)
+                found = True
                 break
+        if found == False:
+            lcmPrimeFactors.append(primeFactor1)
 
-    gcf = 1
-    for commonPrimeFactor in commonPrimeFactors:
-        gcf = gcf * commonPrimeFactor
+    print(lcmPrimeFactors, primeFactors1, primeFactors2)       
+    lcmPrimeFactors.extend(primeFactors2)
+
+
+
+    lcm = 1
+    for lcmPrimeFactor in lcmPrimeFactors:
+        lcm = lcm * lcmPrimeFactor
         
-    return gcf
+    return lcm
+
+
 
 
 def __isPrime(n, primes):
