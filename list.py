@@ -4,7 +4,7 @@ def count(n, l):
     for number in l:
         if number == n:
             count = count + 1
-    return count 
+    return count
 
 
 # length([ 5, 3, 2, 4]) returns 4
@@ -16,6 +16,7 @@ def length(l):
 
 
 # max([ 5, 4, 8, 9]) returns 9
+# max([ -5, -4, -8, -9]) returns -4
 def max(l):
     max = 0
     for number in l:
@@ -30,7 +31,7 @@ def min(l):
     for number in l:
         if number < min:
             min = number
-    return min    
+    return min
 
 
 # isFound(5, [ 3, 4, 5, 6]) returns True
@@ -54,5 +55,3 @@ def removeDuplicates(l):
         if true == True:
             nonduplicits.append(ch)
     return nonduplicits
-
-
