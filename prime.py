@@ -1,5 +1,5 @@
 def generatePrimes(max):
-    primes = [ 2 ]
+    primes = [2]
     for n in range(3, max + 1):
         if (__isPrime(n, primes)):
             primes.append(n)
@@ -25,9 +25,7 @@ def getPrimeFactors(n):
 
 def isPrime(n):
     primes = generatePrimes(n - 1)
-    if (__isPrime(n, primes)):
-        return True
-    return False
+    return __isPrime(n, primes)
 
 def lcm(n1, n2):
     primeFactors1 = getPrimeFactors(n1)
@@ -53,7 +51,7 @@ def lcm(n1, n2):
 
     lcm = 1
     for lcmPrimeFactor in lcmPrimeFactors:
-        lcm = lcm * lcmPrimeFactor
+        lcm *= lcmPrimeFactor
         
     return lcm
 
@@ -61,7 +59,4 @@ def lcm(n1, n2):
 
 
 def __isPrime(n, primes):
-    for prime in primes:
-        if n % prime == 0:
-            return False
-    return True
+    return all(n % prime for prime in primes)
